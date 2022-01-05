@@ -18,6 +18,10 @@ img4 = Image.open('img4.png')
 img4.thumbnail((550, 450))
 img5 = Image.open('img5.png')
 img5.thumbnail((550, 450))
+img6 = Image.open('img6.png')
+img6.thumbnail((550, 450))
+img7 = Image.open('img7.png')
+img7.thumbnail((550, 450))
 
 # open images to use with labels
 image1 = ImageTk.PhotoImage(img1)
@@ -25,8 +29,10 @@ image2 = ImageTk.PhotoImage(img2)
 image3 = ImageTk.PhotoImage(img3)
 image4 = ImageTk.PhotoImage(img4)
 image5 = ImageTk.PhotoImage(img5)
+image6 = ImageTk.PhotoImage(img6)
+image7 = ImageTk.PhotoImage(img7)
 # create list of images
-images = [image1, image2,image3, image4, image5]
+images = [image1, image2,image3, image4, image5,image6,image7]
 # configure the image to the Label in frame
 i = 0
 image_label = Label(frame, image=images[i])
