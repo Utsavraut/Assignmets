@@ -1,10 +1,11 @@
 from tkinter import *
 from PIL import ImageTk,Image
-root = Tk()
-root.title("Image viewer application using python")
-root.resizable(0, 0)
+window = Tk()
+window.title("Barcelona ")
+window.resizable(0, 0)
+window.iconbitmap('fcb.ico')                                         #adding icon in title
 # create frame
-frame=Frame(root, width=600, height=500, bg='white', relief=GROOVE, bd=2)
+frame=Frame(window, width=600, height=500, bg='white', relief=GROOVE, bd=2)
 frame.pack(padx=10, pady=10)
 # create thumbanials of all images  
 img1 = Image.open('img1.png')
@@ -30,8 +31,7 @@ images = [image1, image2,image3, image4, image5]
 i = 0
 image_label = Label(frame, image=images[i])
 image_label.pack()
-# create functions to display
-# previous an next images
+# create functions to display previous and next images
 def previous():
     global i
     i = i - 1
@@ -49,10 +49,10 @@ def next():
         i = -1
         next()
 # create buttons    
-btn1 = Button(root, text="Previous", bg='black', fg='gold', font=('ariel 15 bold'), relief=GROOVE, command=previous)
+btn1 = Button(window, text="<<",width=8, bd=5,bg='white', fg='green', font=('cambria 15 bold'), relief=RAISED, command=previous)
 btn1.pack(side=LEFT, padx=60, pady=5)
-btn2 = Button(root, text="Next", width=8, bg='black', fg='gold', font=('ariel 15 bold'), relief=GROOVE, command=next)
-btn2.pack(side=LEFT, padx=60, pady=5)
-btn3 = Button(root, text="Exit", width=8, bg='black', fg='gold', font=('ariel 15 bold'), relief=GROOVE, command=root.destroy)
+btn3 = Button(window, text="Exit", width=8,bd=5, bg='white', fg='green', font=('cambria 15 bold'), relief=RAISED, command=window.destroy)
 btn3.pack(side=LEFT, padx=60, pady=5)
-root.mainloop()
+btn2 = Button(window, text=">>", width=8, bd=5,bg='white', fg='green', font=('cambria 15 bold'), relief=RAISED, command=next)
+btn2.pack(side=LEFT, padx=60, pady=5)
+window.mainloop()
